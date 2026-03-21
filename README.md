@@ -227,7 +227,7 @@ d_obs = z_in + k_ob · ω
 │   ├── tracking_result.png
 │   └── attitude_response.png
 ├── docs/
-│   └── controller_design.pdf       # Full mathematical derivation
+│   └── controller_Draft.pdf       # Full mathematical derivation
 └── README.md
 ```
 
@@ -235,7 +235,7 @@ d_obs = z_in + k_ob · ω
 
 ## Technical Report
 
-Full mathematical derivation in [`docs/controller_design.pdf`](docs/controller_design.pdf), including:
+Full mathematical derivation in [`docs/controller_Draft.pdf`](docs/controller_Draft.pdf), including:
 - Complete 6DOF rigid body dynamics
 - INDI control law and stability analysis
 - Lyapunov stability proof for roll, pitch, and yaw SMC
