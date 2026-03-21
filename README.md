@@ -47,7 +47,7 @@ This repository is part of a two-stage controller study:
 |-------|------------|--------------|
 | 1 | [SMC + SMC + DF](https://github.com/HojunKim00920/6DOF-quadrotor-SMC-controller) | DF feedforward introduced into SMC baseline |
 | 1 | **This repo** — INDI + SMC + DF | Position loop replaced with INDI outer loop |
-
+ 
 The progression from Stage 1 to Stage 2 isolates the effect of replacing the SMC position
 controller with INDI, while keeping the DF feedforward structure consistent across both.
 
