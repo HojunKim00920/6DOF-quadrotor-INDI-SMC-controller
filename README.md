@@ -110,7 +110,7 @@ as the DF feedforward requires jerk and snap to compute
 desired angular rates and accelerations for the SMC inner loop.
 
 The script automatically computes derivatives up to snap (4th order) and
-saves them as MATLAB function files (`ref_pos.m`, `ref_vel.m`, ..., `ref_snap.m`).
+saves them as MATLAB function files (`ref_pos.m`, `ref_vel.m`, `ref_jerk.m`, `ref_snap.m`).
 
 > **Note:** Piecewise-defined trajectories require careful handling at
 > discontinuous points, where higher-order derivatives may not exist.
@@ -129,8 +129,8 @@ open('INDI_POS_SMC_Att.slx')
 ```
 
 Configure in Simulink before running:
-- **Solver**: fixed-step (recommended: `ode4`)
-- **Step size**: `0.001` s
+- **Solver**: fixed-step (default: `ode4`)
+- **Step size**: desired step size (default: `0.001` s)
 - **Stop time**: desired simulation duration
 
 Run the simulation. Use **Scope** blocks for real-time monitoring.
@@ -157,16 +157,6 @@ run('ref_traj_plotter.m')
 ```matlab
 run('result_plotter.m')
 ```
-
----
-
-## Simulation Results
-
-### 3D Trajectory Tracking
-![Trajectory Tracking](results/tracking_result.png)
-
-### Attitude Response
-![Attitude Response](results/attitude_response.png)
 
 ---
 
