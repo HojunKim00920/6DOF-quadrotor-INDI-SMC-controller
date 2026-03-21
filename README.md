@@ -71,17 +71,22 @@ run('Parameter.m')
 
 Key parameters defined here:
 
-| Variable | Description |
-|----------|-------------|
-| `m`, `l`, `Jx/y/z` | Quadrotor physical parameters |
-| `Tmax`, `Qmax`, `Pmax/min` | Actuator limits |
-| `a3`, `k5`, `k6` | SMC roll/pitch gains |
-| `a4`, `k7`, `k8` | SMC yaw gains |
-| `a1`, `a2`, `b1x`... | INDI position controller gains |
-| `pos_gain` | Position error gain matrix Kp (3×3 diagonal) |
-| `vel_gain` | Velocity error gain matrix Kv (3×3 diagonal) |
-| `acc_gain` | Acceleration error gain matrix Ka (3×3 diagonal) |
-| `g` | Gravitational acceleration |
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `m` | 0.8 | Mass [kg] |
+| `l` | 0.165 | Arm length [m] |
+| `Jx`, `Jy`, `Jz` | 0.005, 0.005, 0.009 | Moments of inertia [kg·m²] |
+| `g` | 9.8067 | Gravitational acceleration [m/s²] |
+| `K1` | 0.01 | Linear drag coefficient [N/(m/s)] |
+| `K2` | 0 | Quadratic drag coefficient (ignored) |
+| `Tmax` | 4 | Maximum thrust per rotor [N] |
+| `Qmax` | 0.05 | Maximum reaction torque per rotor [N·m] |
+| `Pmax`, `Pmin` | 2000, 1000 | PWM command range [μs] |
+| `pos_gain` | diag([4.14, 4.14, 3.105]) | Position error gain Kp [1/s²] |
+| `vel_gain` | diag([2.34, 2.34, 1.77]) | Velocity error gain Kv [1/s] |
+| `acc_gain` | diag([0.5, 0.5, 0.3]) | Acceleration error gain Ka (dimensionless) |
+| `a3`, `k5`, `k6` | 32.764, 0.0388, 0.0219 | SMC roll/pitch: pole, switching gain, damping gain |
+| `a4`, `k7`, `k8` | 13.82, 0.3147, 0.1244 | SMC yaw: pole, switching gain, damping gain |
 
 ### Step 2 — Define Reference Trajectory
 
@@ -152,6 +157,16 @@ run('ref_traj_plotter.m')
 ```matlab
 run('result_plotter.m')
 ```
+
+---
+
+## Simulation Results
+
+### 3D Trajectory Tracking
+![Trajectory Tracking](results/tracking_result.png)
+
+### Attitude Response
+![Attitude Response](results/attitude_response.png)
 
 ---
 
