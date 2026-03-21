@@ -1,7 +1,7 @@
 # 6DOF Quadrotor Controller: INDI + SMC + Differential Flatness
 **MATLAB / Simulink Implementation**
 
----
+--- 
 
 ## Overview
 
